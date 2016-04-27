@@ -4,11 +4,25 @@
   <head>
     <title>BusMall</title>
     <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <script src="../chart.js"></script>
   </head>
 
   <body>
+    <div class="text">
+      <h1>Bus Mall</h1>
+      <p>Please which item you prefer from the following three items. You will do this 25 times. You will then be able to see your results.</p>
+    </div>
     <div class="threeImage" id="threeImage">
-
+      <img class="left picture"/>
+      <img class="center picture"/>
+      <img class="right picture"/>
+    </div>
+    <br>
+    <button id="submitButton" hidden>See Results</button>
+    <br>
+    <div class="results">
+      <h2 id="chartHeading" hidden>Times Selected vs. Times Shown</h2>
+      <canvas id="myChart"></canvas>
     </div>
     <script src="../js/script.js"></script>
   </body>
