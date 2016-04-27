@@ -11,6 +11,7 @@ var storeItemObject = [];
 var limitClick = 0;
 var resultsTimesClicked = [];
 var resultsTimesShown = [];
+var resultsPercent = [];
 
 function StoreItem (name, source) {
   this.name = name;
@@ -52,6 +53,8 @@ function results(){
   for(var i = 0; i < storeItemObject.length; i++) {
     resultsTimesClicked.push(storeItemObject[i].clickedOn);
     resultsTimesShown.push(storeItemObject[i].appearances);
+    var percentage = Math.floor((resultsTimesClicked[i] / resultsTimesShown[i]) * 100);
+    resultsPercent.push(percentage);
   }
 }
 
@@ -62,33 +65,30 @@ function getRandomIntInclusive () {
 
 function graphResults (){
   var unhide = document.getElementById('chartHeading');
+  var unhide2 = document.getElementById('chartHeading2');
   unhide.removeAttribute('hidden');
+  unhide2.removeAttribute('hidden');
   var ctx = document.getElementById('myChart').getContext('2d');
+  var ctx2 = document.getElementById('myChart2').getContext('2d');
+  console.log('here');
   var data = {
     labels: picture,
     datasets: [
       {
         label: 'How many times clicked',
-
         // The properties below allow an array to be specified to change the value of the item at the given index
         // String  or array - the bar color
         backgroundColor: 'rgba(255,99,132,0.2)',
-
         // String or array - bar stroke color
         borderColor: 'rgba(255,99,132,1)',
-
         // Number or array - bar border width
         borderWidth: 1,
-
         // String or array - fill color when hovered
         hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-
         // String or array - border color when hovered
         hoverBorderColor: 'rgba(255,99,132,1)',
-
         // The actual data
         data: resultsTimesClicked,
-
         // String - If specified, binds the dataset to a certain y-axis. If not specified, the first y-axis is used.
         yAxisID: 'y-axis-0',
       },
@@ -108,6 +108,34 @@ function graphResults (){
     type: 'bar',
     data: data
   });
+
+  var data2 = {
+    labels: picture,
+    datasets: [
+      {
+        label: 'Percentage of Clicked/Shown',
+        // The properties below allow an array to be specified to change the value of the item at the given index
+        // String  or array - the bar color
+        backgroundColor: 'rgba(255,99,132,0.2)',
+        // String or array - bar stroke color
+        borderColor: 'rgba(255,99,132,1)',
+        // Number or array - bar border width
+        borderWidth: 1,
+        // String or array - fill color when hovered
+        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+        // String or array - border color when hovered
+        hoverBorderColor: 'rgba(255,99,132,1)',
+        // The actual data
+        data: resultsPercent,
+      }
+    ]
+  };
+
+  var myBarChart2 = new Chart(ctx2, {
+    type: 'bar',
+    data: data2
+  });
+
 }
 
 //During a click event this block should recreate 3 unique images only and increments when an image is clicked on.
@@ -130,7 +158,6 @@ threeImage.addEventListener('click', handleClick);
 
 function unhide (event) {
   event.preventDefault();
-  console.log('here');
   results();
   graphResults();
 }
