@@ -1,8 +1,20 @@
+.text {
+  text-align: center;
+}
+
 .picture {
   height: 300px;
   width: 300px;
+  border: 1px solid black;
 }
 
 .threeImage{
-  height: 800px;
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.results {
+  height: 500px;
+  width: 1000px;
 }
