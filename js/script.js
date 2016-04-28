@@ -141,29 +141,33 @@ function graphResults (){
 
 //During a click event this block should recreate 3 unique images only and increments when an image is clicked on.
 function handleClick (event) {
-  limitClick += 1;
-  if(limitClick === 25){
-    threeImage.removeEventListener('click',handleClick);
-    submit.removeAttribute('hidden');
-    playAgain.removeAttribute('hidden');
-    left[0].setAttribute('hidden', 'hidden');
-    center[0].setAttribute('hidden', 'hidden');
-    right[0].setAttribute('hidden', 'hidden');
-    paragraph[0].setAttribute('hidden', 'hidden');
-    for (var i = 0; i < storeItemObject.length; i++) {
-      if(event.target.id === storeItemObject[i].name) {
-        storeItemObject[i].clickedOn += 1;
-        localStorage.setItem('votes', JSON.stringify(storeItemObject));
+  if ((event.target.className !== 'threeImage')) {
+    limitClick += 1;
+    if(limitClick === 25){
+      threeImage.removeEventListener('click',handleClick);
+      submit.removeAttribute('hidden');
+      playAgain.removeAttribute('hidden');
+      left[0].setAttribute('hidden', 'hidden');
+      center[0].setAttribute('hidden', 'hidden');
+      right[0].setAttribute('hidden', 'hidden');
+      paragraph[0].setAttribute('hidden', 'hidden');
+      for (var i = 0; i < storeItemObject.length; i++) {
+        if(event.target.id === storeItemObject[i].name) {
+          storeItemObject[i].clickedOn += 1;
+          localStorage.setItem('votes', JSON.stringify(storeItemObject));
+        }
       }
+    }else{
+      for (var i = 0; i < storeItemObject.length; i++) {
+        if(event.target.id === storeItemObject[i].name) {
+          storeItemObject[i].clickedOn += 1;
+          localStorage.setItem('votes', JSON.stringify(storeItemObject));
+        }
+      }
+      threeRandomPhotos();
     }
   }else{
-    for (var i = 0; i < storeItemObject.length; i++) {
-      if(event.target.id === storeItemObject[i].name) {
-        storeItemObject[i].clickedOn += 1;
-        localStorage.setItem('votes', JSON.stringify(storeItemObject));
-      }
-    }
-    threeRandomPhotos();
+    alert('Choose a picture!');
   }
 }
 
