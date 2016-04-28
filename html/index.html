@@ -3,29 +3,41 @@
 
   <head>
     <title>BusMall</title>
+    <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <script src="../chart.js"></script>
   </head>
 
   <body>
     <div class="text">
-      <h1>Bus Mall</h1>
-      <p>Please which item you prefer from the following three items. You will do this 25 times. You will then be able to see your results.</p>
+      <h1 class="bangers">Bus<h1 class="satisfy">Mall</h1>
     </div>
-    <div class="threeImage" id="threeImage">
-      <img class="left picture"/>
-      <img class="center picture"/>
-      <img class="right picture"/>
+    <div class="paragraph">
+      <p>Please which item you prefer from the following three items. You will do this 25 times. You will then be able to see your results or choose to continue with another 10 images. You are able to do so as much as you'd like.</p>
     </div>
-    <br>
-    <button id="submitButton" hidden>See Results</button>
-    <br>
-    <div class="results">
-      <h2 id="chartHeading" hidden>Times Selected vs. Times Shown</h2>
-      <canvas id="myChart"></canvas>
-      <h2 id="chartHeading2" hidden>Percentage of Times Selected vs. Times Shown</h2>
-      <canvas id="myChart2"></canvas>
+    <div class="button">
+      <button id="submitButton" hidden>See Results</button>
+      <button id="playAgain" hidden>10 More Clicks</button>
     </div>
+
+    <div class="container">
+      <br>
+      <br>
+      <div class="threeImage" id="threeImage">
+        <img class="left picture"/>
+        <img class="center picture"/>
+        <img class="right picture"/>
+      </div>
+      <div class="results">
+        <h2 id="chartHeading" hidden>Times Selected vs. Times Shown</h2>
+        <canvas id="myChart"></canvas>
+        <br>
+        <h2 id="chartHeading2" hidden>Percentage of Times Selected vs. Times Shown</h2>
+        <canvas id="myChart2"></canvas>
+      </div>
+    </div>
+
     <script src="../js/script.js"></script>
   </body>
 
