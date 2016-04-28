@@ -142,7 +142,7 @@ function graphResults (){
 //During a click event this block should recreate 3 unique images only and increments when an image is clicked on.
 function handleClick (event) {
   limitClick += 1;
-  if(limitClick === 5){
+  if(limitClick === 25){
     threeImage.removeEventListener('click',handleClick);
     submit.removeAttribute('hidden');
     playAgain.removeAttribute('hidden');
