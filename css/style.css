@@ -1,8 +1,25 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .text {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+p {
+  margin-top: 0px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .picture {
+  margin-left: 20px;
+  margin-right: 20px;
   height: 300px;
   width: 300px;
   border: 1px solid black;
@@ -10,11 +27,46 @@
 
 .threeImage{
   height: 300px;
-  display: flex;
-  justify-content: space-around;
 }
 
 .results {
   height: 500px;
   width: 1000px;
+  text-align: center;
+}
+
+.bangers {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 75px;
+  font-family: 'Bangers', cursive;
+  color: #2994ce;
+}
+
+.satisfy {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 75px;
+  font-family: 'Satisfy', cursive;
+  margin-left: 10px;
+}
+
+.button {
+  text-align: center;
+}
+
+#submitButton{
+  height: 50px;
+  width: 100px;
+  background: #E63B2E;
+  color: white;
+  border-radius: 20px;
+}
+
+#playAgain {
+  color: white;
+  height: 50px;
+  width: 100px;
+  background: #E63B2E;
+  border-radius: 20px;
 }
