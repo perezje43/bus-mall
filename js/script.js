@@ -1,4 +1,4 @@
-var pictureUrl = ['../images/bag.jpg','../images/banana.jpg','../images/bathroom.jpg','../images/boots.jpg','../images/breakfast.jpg','../images/bubblegum.jpg','../images/chair.jpg','../images/cthulhu.jpg','../images/dog-duck.jpg','../images/dragon.jpg','../images/pen.jpg','../images/pet-sweep.jpg','../images/scissors.jpg','../images/shark.jpg','../images/sweep.png','../images/tauntaun.jpg','../images/unicorn.jpg','../images/usb.gif','../images/water-can.jpg','../images/wine-glass.jpg'];
+var pictureUrl = ['images/bag.jpg','images/banana.jpg','images/bathroom.jpg','images/boots.jpg','images/breakfast.jpg','images/bubblegum.jpg','images/chair.jpg','images/cthulhu.jpg','images/dog-duck.jpg','images/dragon.jpg','images/pen.jpg','images/pet-sweep.jpg','images/scissors.jpg','images/shark.jpg','images/sweep.png','images/tauntaun.jpg','images/unicorn.jpg','images/usb.gif','images/water-can.jpg','images/wine-glass.jpg'];
 
 var picture =  ['bag','banana','bathroom','boots','breakfast','bubblegum','chair','cthulhu','dog-duck','dragon','pen','pet-sweep','scissors','shark','sweep','tauntaun','unicorn','usb','water-can','wine-glass'];
 
